@@ -1,0 +1,119 @@
+<head>
+
+<link rel="stylesheet" href="./bootstrap-3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/MF.css">
+<script src="./bootstrap-3.3.5/js/jquery-1.11.3.min.js"></script>
+<script src="./bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="./js/MF.js"></script>
+<title>Mutual Fund Simulator</title>
+</head>
+<body>
+
+<div class="container">
+<%include navigation.html%>
+	<div class="maincontent">
+  	
+  	<div class="row">
+  		<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ProfileBox_m">
+	  		<div class="ProfileBox">
+	  			<h3>Welcome <%=data[0].name%>,</h3>
+	  				Age: <%=data[0].age%><br/>
+	  				Email: <%=data[0].email%><br/>
+	  				Mob: <%=data[0].mobile%>
+	  		</div>	
+  		</div>
+ 		<div class="col-md-3 col-lg-3 col-xs-6 col-sm-6 WalletBox_m">
+	  		<div class="WalletBox">
+	  			<h3>Filcoin Wallet(Rs)</h3>
+	  			<h1>890.00 </h1>
+	  			<!-- <input type="button" onClick="getBalance()"/>
+	  			<span id="getBalance">
+	  			
+	  			</span> -->
+	  		</div>	
+  		</div>
+  		<div class="col-md-3 col-lg-3 col-xs-6 col-sm-6 MFWBox_m">
+	  		<div class="MFWBox">
+	  			<h3>Net Market Worth(Rs) </h3>
+	  			<h1>124 </h1>
+	  		</div>	
+  		</div>
+		  		
+  	</div>
+  	
+  	<div class="row hidden-xs higgen-sm">
+  		<div class="col-lg-12 col-md-12 mftable_m">
+  		<h4>My Investment Profile</h4>
+  		<div class="table-responsive">          
+  			<table class="table table-striped table-bordered table-condensed">
+    			<thead>
+				      <tr class="MFTable">
+				        <th class="table_sno">#</th>
+				        <th class="table_mfn">Mutual Fund Name</th>
+				        <th class="table_ua">Units Allocated</th>
+				        <th class="table_cn">Current NAV</th>
+				        <th class="table_tmv">Net Market Value</th>
+				      </tr>
+				    </thead>
+				    <tbody id="MFHolding" >
+				    <% for(var i =0;i<data.length;i++){%>
+				    
+				      <tr>
+				        <td><%=i+1%></td>
+				        <td><%=data[i].asset_name%></td>
+				        <td><%=data[i].units%></td>
+				        <td><%=data[i].curr_nav%></td>
+				        <td><%=data[i].NET_MARKET_VALUE%></td>
+				      </tr>
+				      <%}%>
+    			</tbody>
+  			</table>
+  		</div>
+  		</div>
+  			
+  		</div>
+  		
+  		<div class="row hidden-md hidden-lg mobile_dashboard">
+  			<div class="table-responsive">
+  			<caption><b> #1</b></caption>
+  			<table class="table table-striped table-bordered table-condensed" id="MFHolding_M">
+    			<thead>
+			      <tr class="mob_head">
+			      	<th class="table_sm_mfn">Mutual Fund Name</th>
+			        <th class="table_sm_mfn"> Blue Chip Fund</th>
+			      </tr>
+			    </thead>
+			    <tbody >
+			      <tr>
+			      	<th>Units Allocated</th>
+			        <td> 101.3</td>
+			      </tr>
+			      <tr>
+			        <th>Amount Invested</th>
+			        <td> 3000</td>
+			      </tr>
+			      <tr>
+			      	<th>Current Nav</th>
+			        <td> 58</td>
+			      </tr>
+			      <tr>
+			      	<th>Total Market Value</th>
+			        <td> 4000</td>
+			      </tr>
+	   			</tbody>
+  			</table>
+  			</div>
+  		</div>
+  	</div>
+ </div>
+ 
+<script type="text/javascript">
+	window.onload=function(){
+	//loadMFHoldings();	
+	};
+
+</script>
+<div id="loadedPage">
+</div>
+  
+</body>

@@ -1,0 +1,249 @@
+/* ---------------------------header-------------------------------------- */
+
+
+#header
+{
+	margin: auto;
+	color: #FFFFFF;
+	border-bottom: 3px solid blue;
+}
+.header1
+{
+	background-color: #2D2D2A;
+}
+.mainheader
+{
+	margin: auto;
+	width:973px;
+}
+#logo
+{
+	width: 100px;
+	height: 50px;
+	background-color:#CB202D;	
+}
+#helplinks
+{
+	float: right;
+	
+}
+#helplinks a
+{
+	color: #FFFFFF;
+	padding:5px;
+}
+.header2
+{
+	width:100%;
+	background-color: #F4F4F2;
+	color: #2D2D2A;
+}
+#menubar
+{
+	margin:auto;
+	color: #FFFFFF;
+	width:973px;
+	height:40px;
+		
+}
+.linkitem
+{
+    float: left;
+    margin: 0 40px 0 0;
+}
+
+.linkitem .selected
+
+{
+	color: #2D2D2A;
+    display: block;
+    font-size: 14px;
+    line-height: 43px;
+    text-transform: uppercase;
+    transition: color 0.15s ease-out 0s;
+ }
+
+.linkitem a {
+   /* color: #CB202D;*/
+    text-decoration: none;
+}
+.linkitem a:hover {
+   /* color: #CB202D;*/
+    text-decoration: underline;
+}
+
+.linkitem .unselected{
+    color: #8D8D85;
+    display: block;
+    font-size: 14px;
+    line-height: 43px;
+    text-transform: uppercase;
+    transition: color 0.15s ease-out 0s;
+}
+
+/* -------------------------------sidebar------------------------------ */
+
+.autocomplete_list * , input {
+    font: 11px/15px "lucida grande",verdana,sans-serif;
+}
+.autocomplete_list {
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #888888;
+    display: block;
+    text-align: left;
+    z-index: 200;
+}
+.autocomplete_list b, .autocomplete_list em, .autocomplete_list strong {
+    font-weight: bold;
+}
+.autocomplete_list, .autocomplete_list ol, .autocomplete_list li {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.autocomplete_list .item, .autocomplete_list li:hover {
+    border-top: 1px solid #E3E3E3;
+    cursor: pointer;
+    margin: 0;
+    text-align: left;
+}
+.autocomplete_list .first_item {
+    border-top: medium none;
+}
+
+.autocomplete_list li:hover {
+    background: none repeat scroll 0 0 #B4D5FE;
+    color: #000000;
+}
+.autocomplete_list span {
+    color: #111111;
+    float: right;
+    padding-left: 20px;
+}
+#sidebar
+{
+	border: 1px blue solid;
+	height: 600px;
+	width:  250px;
+	float:  left;
+}
+.FindDoctorBox
+{
+	width: 240px;
+	border: 1px blue solid;
+	height: 130px;
+	margin:10px 0 0 5px;
+	
+}
+.boxHeading
+{ 
+	background-color: #4A9ACE;
+    height: 24px;
+	font-family: Arial,Helvetica,sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+/* --------------------------- sidebar end------------------------------- */
+
+/* -------------------------------body----------------------------------- */
+.clearer
+{
+	clear:both;
+}
+body
+{background-color:#F6F2E9;
+	font: 12px arial;
+	padding:0px;
+	margin:0px;
+}
+.centralbody
+{
+	
+	width:975px;
+	margin:auto;
+}
+#content
+{background-color:#FFFFFF;
+	border:1px blue solid;
+	height:600px;
+	width:720px;
+	float:right;
+}
+/*
+.gd-row:after {
+    clear: both;
+    content: ".";
+    display: block;
+    height: 0;
+    visibility: hidden;
+    border: 1px black solid;
+}
+.gu3 {
+    width: 232px;
+}
+.gd-col {
+  border: 1px grey solid;
+    float: left;
+    height: 80px;
+    padding-left: 5px;
+    position: relative;
+}
+*/
+
+/*------------------------------------content---result page-----------------------------------------------------*/
+.searchResult
+{
+	    list-style-type: none;
+	 padding: 12px 0 10px;
+	border-bottom: 1px solid #E4E4E2;
+}
+.DoctorDetails
+{
+	width: 400px;
+ float: left;
+ border: 1px solid #E4E4E2;
+}
+.snapshot
+{
+	width:100px;
+	height:100px;
+	float: left;
+	margin-right:5px;
+	border: 1px solid #E4E4E2;
+}
+/* ------------------------------------------footer---------------------------- */
+
+#footer
+{
+	border-top: 3px solid #CB202D;
+    background-color: #2D2D2A;
+	height: 200px;
+}
+.footercontainer
+{
+	width: 975px;
+	margin:auto;
+}
+#second
+{
+	float:left;
+	width:315px;
+	margin-left:5px;
+	height: 198px;
+}
+#third
+{
+	float:left;
+	width:315px;
+	height: 198px;
+	margin-left:5px;
+}
+#first
+{
+	float:left;
+	border: 1px black solid;
+	width:315px;
+	margin-left:5px;
+	height: 198px;
+}
+/* -------------------------------footer end------------------------------- */

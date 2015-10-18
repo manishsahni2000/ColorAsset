@@ -1,0 +1,88 @@
+
+<head>
+
+<link rel="stylesheet" href="../bootstrap-3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/MF.css">
+<script src="../bootstrap-3.3.5/js/jquery-1.11.3.min.js"></script>
+<script src="../bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="../js/MF.js"></script>
+<title>Mutual Fund Simulator</title>
+</head>
+<body>
+<div class="container">
+		<% include navigation.html %>
+	
+	<div class="maincontent">
+  	
+  	<div class="row">
+  		<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ProfileBox_m">
+	  		<div class="ProfileBox">
+	  			<h3>Existing Profile</h3>
+	  			    Name: Kunjal<br/>
+	  				Age: 24<br/>
+	  				Email: k_j1990@yahoo.co.in<br/>
+	  				Mob: 8800796626<br/>
+	  		</div>	
+  		</div>
+ 	</div>
+  	
+  	<div class="row">
+  		<div class="col-lg-12 col-md-12 mftable_m">
+  		<div id="signup_form" class="col-md-12">	  		
+			  	<form onsubmit="return validate()" action="webdoc/signup" method="post">
+					<div class="row">
+					<div class="form-group">
+				  		<label id="signup_label">Update an Account</label>
+				  	</div>	
+					<div class="col-sm-12 col-md-6">	  		
+						<div class="form-group">
+				  		<label>Name</label>
+				  		<input type="text" class="form-control" name="name" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  		
+						<div class="form-group">
+				  		<label>Email</label>
+				  		<input type="text" class="form-control" name="email" />
+				  		</div>
+				  	</div></div><div class="row"><div class="col-sm-12 col-md-6">
+				  		<div class="form-group">
+				  		<label>Mobile</label>
+				  		<input type="text" class="form-control" name="mobile" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  		
+				  		<div class="form-group">
+				  		<label>Age</label>
+				  		<input type="text" class="form-control" name="age" />
+				  		</div>
+				  	</div></div><div class="row"><div class="col-sm-12 col-md-6">	
+				  		<div class="form-group">
+				  		<label>Occupation</label>
+				  		<input type="text" class="form-control" name="occupation" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  		
+				  		<div class="form-group">
+				  		<label>Income</label>
+				  		<input type="text" class="form-control" name="income" />
+				  		</div>
+				  	</div></div><div class="row"><div class="col-sm-12 col-md-6">	
+				  		<div class="form-group">
+				  		<label> Password </label>
+				  		<input type="password" class="form-control" id="pass" name="pass" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  			
+				  		<div class="form-group">
+				  		<label>Confirm password</label>
+				  		<input type="password" class="form-control" id="pass-c" name="pass-c" />
+				  		</div>
+				  	</div></div>	
+				  		<button type="submit" class="btn btn-success">Update</button>
+				  		
+				</form></div>
+				</div>
+  			
+  		</div>
+  		
+  	</div>
+ </div>
+  
+</body>

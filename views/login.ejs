@@ -1,0 +1,121 @@
+
+<head>
+
+<link rel="stylesheet" href="./bootstrap-3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="./css/MF.css">
+<script src="./bootstrap-3.3.5/js/jquery-1.11.3.min.js"></script>
+<script src="./bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="./js/MF.js"></script>
+<title>Mutual Fund Simulator</title>
+</head>
+<body>
+<div class="container">
+	<nav id="navbar" class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle pull-left" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a id="title_mfs" class="navbar-brand" href="#">Mutual Fund Simulator</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="#">Home</a></li>
+        <!--  <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Action <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Buy</a></li>
+            <li><a href="#">Sell</a></li>
+            <li><a href="#">Account Statement</a></li>
+          </ul>
+        </li> -->
+        <li><a href="#">Help</a></li>
+        <li><a href="#">Contact Us</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" id="right-nav">
+        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </ul>
+    </div>
+	</nav>
+	
+  	<div class="row maincontent">
+  		<div class="col-sm-12 col-md-6 "></div>
+		<div class="col-sm-12 col-md-6 ">
+			<div class="row">
+				<div id="login_space" class="col-sm-12 col-md-12">	  		
+			  		<form onsubmit="return validate()" action="/authenticate" method="post">
+			  		<div class="row"><div class="col-sm-12 col-md-6">
+				  		<div class="form-group">
+				  		<label>User ID</label>
+				  		<input type="text" class="form-control" name="user_id" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	
+				  		<div class="form-group">
+				  		<label>Password</label>
+				  		<input type="Password" class="form-control" name="password" />
+				  		</div>
+				  	</div></div>
+				  	<div class="form-group">
+					  	<button type="submit" class="btn btn-success">Login</button>
+					  	<button type="button" id="open_signup" class="btn btn-success hidden-md hidden-lg pull-right">Signup</button>
+					</div>
+				  	</form>
+				</div><div id="signup_form" class="col-md-12 hidden-xs hidden-sm">	  		
+			  	<form action="/welcome" method="post" onsubmit="return validate()" >
+					<label id="signup_label2" class="hidden-xs hidden-sm" >Create an Account</label>
+					<div class="row">
+					<div class="form-group hidden-lg hidden-md">
+				  		<label id="signup_label">Create an Account</label>
+				  		<button type="button" id="back_login" class="btn btn-primary back_login pull-right">Login</button>
+				  	</div>	
+					<div class="col-sm-12 col-md-6">	  		
+						<div class="form-group">
+				  		<label>Name</label>
+				  		<input type="text" class="form-control" name="uname" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  		
+						<div class="form-group">
+				  		<label>Email</label>
+				  		<input type="text" class="form-control" name="email" />
+				  		</div>
+				  	</div></div><div class="row"><div class="col-sm-12 col-md-6">
+				  		<div class="form-group">
+				  		<label>Mobile</label>
+				  		<input type="text" class="form-control" name="mobile" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  		
+				  		<div class="form-group">
+				  		<label>Age</label>
+				  		<input type="text" class="form-control" name="age" />
+				  		</div>
+				  	</div></div><div class="row"><div class="col-sm-12 col-md-6">	
+				  		<div class="form-group">
+				  		<label>Occupation</label>
+				  		<input type="text" class="form-control" name="occupation" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  		
+				  		<div class="form-group">
+				  		<label>Income</label>
+				  		<input type="text" class="form-control" name="income" />
+				  		</div>
+				  	</div></div><div class="row"><div class="col-sm-12 col-md-6">	
+				  		<div class="form-group">
+				  		<label> Password </label>
+				  		<input type="password" class="form-control" id="pass" name="pass" />
+				  		</div>
+				  	</div><div class="col-sm-12 col-md-6">	  			
+				  		<div class="form-group">
+				  		<label>Confirm password</label>
+				  		<input type="password" class="form-control" id="pass-c" name="pass-c" />
+				  		</div>
+				  	</div></div>	
+				  		<button type="submit" class="btn btn-success">Signup</button>
+				  		<button type="button" class="btn btn-primary back_login hidden-lg hidden-md pull-right">Login</button>
+				</form></div>
+		  </div>
+  	  </div>
+  </div>
+</div>
+</body>

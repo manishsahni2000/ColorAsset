@@ -1,0 +1,102 @@
+
+<head>
+
+<link rel="stylesheet" href="../bootstrap-3.3.5/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/MF.css">
+<script src="./bootstrap-3.3.5/js/jquery-1.11.3.min.js"></script>
+<script src="./bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="./js/MF.js"></script>
+<title>Mutual Fund Simulator</title>
+</head>
+<body>
+<div class="container">
+		<% include navigation.html%>
+	
+	<div class="maincontent">
+  	
+  	<div class="row">
+  		<div class="col-md-6 col-lg-6 col-xs-12 col-sm-12 ProfileBox_m">
+	  		
+  		</div>
+ 	</div>
+  	<form name="sellmf" id="sellmf" onsubmit="return validate()" action="/Sell" method="post">
+  	<input type="hidden" value="" name="assetid" id="MFId"/>
+  	<input type="hidden" value="" name="assetquantity" id="MFAmount"/>
+  	<input type="hidden" value="" name="assetname" id="MFName"/>
+  	<input type="hidden" value="" name="issuance_address" id="issuance_address"/>
+  	</form>
+  	<div class="row hidden-xs higgen-sm">
+  		<div class="col-lg-12 col-md-12 mftable_m">
+  		<h4>Available Mutual Funds</h4>
+  		<div class="table-responsive">          
+  			<table class="table table-striped table-bordered table-condensed">
+    			<thead>
+				      <tr class="MFTable">
+				        <th class="table_sno">#</th>
+				        <th class="table_mfn">Mutual Fund Name</th>
+				        <th class="table_ua">Units Allocated</th>
+				        <th class="table_ai">Current Nav</th>
+				        <th class="table_ai">Total Market Value</th>
+				        <th class="table_cn">Amount</th>
+				        
+				      </tr>
+				    </thead>
+				    <tbody>
+				     <% for(var i =0;i<data.length;i++){%>
+				      <tr>
+				        <td><%=i+1%></td>
+				        <td><%=data[i].asset_name%></td>
+				        <td><%=data[i].Total_Units%></td>
+				        <td> <%=data[i].curr_nav%></td>
+				        <td> <input type="text" value="0" id="<%=data[i].asset_id%>" class="form-control" name="amount" /></td>
+				        <td> <a onClick="sellMF('<%=data[i].asset_id%>','<%=data[i].asset_name%>','<%=data[i].issuance_address%>')" href="#">Sell</a></td>
+				      </tr>
+				      <%}%>
+				      
+    			</tbody>
+  			</table>
+  		</div>
+  		</div>
+  			
+  		</div>
+  		
+  		<div class="row hidden-md hidden-lg mobile_dashboard">
+  			<div class="table-responsive">
+  			<caption><b> #1</b></caption>
+  			<table class="table table-striped table-bordered table-condensed">
+    			<thead>
+			      <tr class="mob_head">
+			      	<th class="table_sm_mfn">Mutual Fund Name</th>
+			        <th class="table_sm_mfn"> Blue Chip Fund</th>
+			      </tr>
+			    </thead>
+			    <tbody>
+			      <tr>
+			      	<th>Units Allocated</th>
+			        <td> 108.3</td>
+			      </tr>
+			      <tr>
+			      	<th>Current Nav</th>
+			        <td> 58</td>
+			      </tr>
+			      <tr>
+			      	<th>Total Market Value</th>
+			        <td> 4000</td>
+			      </tr>
+			      <tr>
+			      <tr>
+			      	<th>Amount</th>
+			        <td><input type="text" value="0" id="12_m" class="form-control" name="amount" /></td>
+			      </tr>
+			      <tr>
+			      	<th>Redeem</th>
+			        <td> <a onClick="SellMF('12_m')" href="#">Buy</a></td>
+			      </tr>
+	   			</tbody>
+  			</table>
+  			</div>
+  		</div>
+  	</div>
+ </div>
+  
+</body>

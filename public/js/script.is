@@ -1,0 +1,65 @@
+
+function showHint(str)
+{
+    var xmlhttp;
+     if (str.length==0)
+      {
+     // document.getElementById("txtHint").innerHTML="";
+      return;
+      }
+    if (window.XMLHttpRequest)
+      {// code for IE7+, Firefox, Chrome, Opera, Safari
+      xmlhttp=new XMLHttpRequest();
+      }
+    else
+      {// code for IE6, IE5
+      xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+      }
+    xmlhttp.onreadystatechange=function()
+      {
+      if (xmlhttp.readyState==4 && xmlhttp.status==200)
+        {
+          var xmlDoc;
+          xmlDoc=xmlhttp.responseText;
+          var obj= eval ("(" + xmlDoc + ")");
+         // var t = "<table>";
+          var t = "<ol id=\"no_0a_autocomplete_list\" style=\"position: absolute; top: 202px; left: 331px; overflow: auto; width: 197px; height: 219px;\" class=\"autocomplete_list\">";
+          //document.getElementById("txtHint").innerHTML=xmlhttp.responseText;
+          //var area =xmlDoc.getElementsByTagName("area");
+          for(var i=0;i<obj.area.length;i++)
+            {
+              //var d3 = obj.area[i].id;
+        	  var d1 = obj.area[i].name ;
+              var d2 = obj.area[i].zipcode;
+              if(isNaN(str)){
+               //t = t + "<tr><td>"+d1+"</td><td>"+d2+"</td></tr>";
+              t= t + "<li onselect=\"this.text.value ="+d1+"-"+d2+"class=\"item first_item\"> <span>"+d2+"</span>"+d1+"</li>";
+              }
+              else{
+              t= t + "<li onselect=\"this.text.value ="+d1+"-"+d2+"class=\"item first_item\"> <span>"+d1+"</span>"+d2+"</li>";
+            	//  t = t + "<tr><td>"+d2+"</td><td>"+d1+"</td></tr>"; 
+              }
+            }
+          //t = t + "</table>";
+            t=t+</ol>
+              document.getElementById("hints").innerHTML=t;
+      }
+      };
+    xmlhttp.open("POST","/webdoc/home?command=getArea&input="+str,true);
+    xmlhttp.send();
+}
+
+function validate()
+{
+// validate only the postal code nd by default select all/general physician for Specialization
+var e = document.getElementById("specialization");
+var strUser = e.options[e.selectedIndex].value;
+//if you need text to be compared then use
+//var strUser1 = e.options[e.selectedIndex].text;
+if(strUser==0) //for text use if(strUser1=="Select")
+{
+alert("Please select a Specialization");
+return false;
+}
+}
+
